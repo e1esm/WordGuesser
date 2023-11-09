@@ -14,6 +14,14 @@
 		BC0692EE2AFA30F000602D3E /* WordGuesserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0692ED2AFA30F000602D3E /* WordGuesserTests.swift */; };
 		BC0692F82AFA30F000602D3E /* WordGuesserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0692F72AFA30F000602D3E /* WordGuesserUITests.swift */; };
 		BC0692FA2AFA30F000602D3E /* WordGuesserUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0692F92AFA30F000602D3E /* WordGuesserUITestsLaunchTests.swift */; };
+		BC0693082AFA334500602D3E /* ProgressBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0693072AFA334500602D3E /* ProgressBarStyle.swift */; };
+		BC06930B2AFA37DA00602D3E /* GeneratorIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06930A2AFA37DA00602D3E /* GeneratorIntegration.swift */; };
+		BC06930F2AFADF4800602D3E /* WordDefinerIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC06930E2AFADF4800602D3E /* WordDefinerIntegration.swift */; };
+		BC0693122AFAE19700602D3E /* WordPaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0693112AFAE19700602D3E /* WordPaletteView.swift */; };
+		BC1394E82AFC057400551FFC /* WordsPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394E72AFC057400551FFC /* WordsPickerViewModel.swift */; };
+		BC1394EA2AFC1C3B00551FFC /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394E92AFC1C3B00551FFC /* ButtonStyle.swift */; };
+		BC1394ED2AFD620300551FFC /* UIDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394EC2AFD620300551FFC /* UIDimension.swift */; };
+		BC1394EF2AFD791400551FFC /* ProgressBarVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		BC0692F32AFA30F000602D3E /* WordGuesserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordGuesserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0692F72AFA30F000602D3E /* WordGuesserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGuesserUITests.swift; sourceTree = "<group>"; };
 		BC0692F92AFA30F000602D3E /* WordGuesserUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordGuesserUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BC0693072AFA334500602D3E /* ProgressBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarStyle.swift; sourceTree = "<group>"; };
+		BC06930A2AFA37DA00602D3E /* GeneratorIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorIntegration.swift; sourceTree = "<group>"; };
+		BC06930E2AFADF4800602D3E /* WordDefinerIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinerIntegration.swift; sourceTree = "<group>"; };
+		BC0693112AFAE19700602D3E /* WordPaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordPaletteView.swift; sourceTree = "<group>"; };
+		BC1394E72AFC057400551FFC /* WordsPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsPickerViewModel.swift; sourceTree = "<group>"; };
+		BC1394E92AFC1C3B00551FFC /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		BC1394EC2AFD620300551FFC /* UIDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDimension.swift; sourceTree = "<group>"; };
+		BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarVIew.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,9 @@
 		BC0692DB2AFA30EF00602D3E /* WordGuesser */ = {
 			isa = PBXGroup;
 			children = (
+				BC1394EB2AFD61E500551FFC /* UIDimension */,
+				BC0693092AFA37BD00602D3E /* Words */,
+				BC0693062AFA333400602D3E /* Progress */,
 				BC0692DC2AFA30EF00602D3E /* WordGuesserApp.swift */,
 				BC0692DE2AFA30EF00602D3E /* ContentView.swift */,
 				BC0692E02AFA30F000602D3E /* Assets.xcassets */,
@@ -125,6 +144,67 @@
 				BC0692F92AFA30F000602D3E /* WordGuesserUITestsLaunchTests.swift */,
 			);
 			path = WordGuesserUITests;
+			sourceTree = "<group>";
+		};
+		BC0693062AFA333400602D3E /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				BC0693072AFA334500602D3E /* ProgressBarStyle.swift */,
+				BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		BC0693092AFA37BD00602D3E /* Words */ = {
+			isa = PBXGroup;
+			children = (
+				BC1394E62AFC054C00551FFC /* ViewModels */,
+				BC0693102AFAE18500602D3E /* Views */,
+				BC06930D2AFADF3600602D3E /* WordsDefiner */,
+				BC06930C2AFADF2C00602D3E /* WordsGenerator */,
+			);
+			path = Words;
+			sourceTree = "<group>";
+		};
+		BC06930C2AFADF2C00602D3E /* WordsGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				BC06930A2AFA37DA00602D3E /* GeneratorIntegration.swift */,
+			);
+			path = WordsGenerator;
+			sourceTree = "<group>";
+		};
+		BC06930D2AFADF3600602D3E /* WordsDefiner */ = {
+			isa = PBXGroup;
+			children = (
+				BC06930E2AFADF4800602D3E /* WordDefinerIntegration.swift */,
+			);
+			path = WordsDefiner;
+			sourceTree = "<group>";
+		};
+		BC0693102AFAE18500602D3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC0693112AFAE19700602D3E /* WordPaletteView.swift */,
+				BC1394E92AFC1C3B00551FFC /* ButtonStyle.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BC1394E62AFC054C00551FFC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BC1394E72AFC057400551FFC /* WordsPickerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BC1394EB2AFD61E500551FFC /* UIDimension */ = {
+			isa = PBXGroup;
+			children = (
+				BC1394EC2AFD620300551FFC /* UIDimension.swift */,
+			);
+			path = UIDimension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +337,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1394E82AFC057400551FFC /* WordsPickerViewModel.swift in Sources */,
+				BC1394EA2AFC1C3B00551FFC /* ButtonStyle.swift in Sources */,
 				BC0692DF2AFA30EF00602D3E /* ContentView.swift in Sources */,
+				BC1394EF2AFD791400551FFC /* ProgressBarVIew.swift in Sources */,
+				BC1394ED2AFD620300551FFC /* UIDimension.swift in Sources */,
+				BC06930F2AFADF4800602D3E /* WordDefinerIntegration.swift in Sources */,
+				BC06930B2AFA37DA00602D3E /* GeneratorIntegration.swift in Sources */,
+				BC0693122AFAE19700602D3E /* WordPaletteView.swift in Sources */,
+				BC0693082AFA334500602D3E /* ProgressBarStyle.swift in Sources */,
 				BC0692DD2AFA30EF00602D3E /* WordGuesserApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,8 +515,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,8 +542,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

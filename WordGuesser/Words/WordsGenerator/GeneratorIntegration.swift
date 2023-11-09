@@ -8,8 +8,8 @@
 import Foundation
 
 
-struct WordResponse: Codable{
-    var word: String
+class WordResponse: ObservableObject{
+    @Published var word: String
     init(word: String) {
         self.word = word
     }
@@ -18,7 +18,7 @@ struct WordResponse: Codable{
     }
 }
 
-struct WordsAPIntegration{
+struct WordsAPIntegrator{
     
     let url = URL(string: "https://random-word-api.herokuapp.com/word?number=4")
     
