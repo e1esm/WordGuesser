@@ -32,7 +32,10 @@ struct ContentView: View {
 
             
         }.onAppear(perform: {
-            definitionView.SetDefinition(new: wordPaletteView.GetRandomWord())
+            definitionView = DefinitionView(definition:
+                                                wordPaletteView.GetRandomWord())
+            /*definitionView.SetDefinition(new: wordPaletteView.GetRandomWord())
+             */
         })
 
     }

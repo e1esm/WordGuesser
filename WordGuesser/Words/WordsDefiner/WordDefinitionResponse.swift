@@ -9,23 +9,27 @@ import Foundation
 
 
 
-struct WordDefinitionResponse: Codable{
-    var word: String
-    var meanings: [Meanings]
+struct Definition: Codable {
+    let definition: String
+    let synonyms: [String]
+    let antonyms: [String]
+    let example: String?
+}
+
+struct Meaning: Codable {
+    let partOfSpeech: String
+    let definitions: [Definition]
+    let synonyms: [String]
+    let antonyms: [String]
+}
+
+struct WordEntry: Codable {
+    let word: String
+    let meanings: [Meaning]
     
     
-    init() {
+    init(){
         word = ""
         meanings = []
     }
-}
-
-
-struct Meanings: Codable{
-    var partOfSpeech: String
-    var definitions: [Definion]
-}
-
-struct Definion: Codable{
-    var definition: String
 }

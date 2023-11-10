@@ -35,7 +35,7 @@ struct WordPaletteView: View{
                     
                     }.buttonStyle(WordPickerButton())
                 }
-            }
+            }.scaledToFill()
             
         }
         .frame(minWidth: UIScreen.screenWidth * 0.65,

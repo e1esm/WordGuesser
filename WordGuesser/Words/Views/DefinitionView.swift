@@ -35,7 +35,6 @@ struct DefinitionView: View{
     
     
     init(definition: String) {
-        print("hey constructor", definition)
         self.definition = DefinitionStorage(definition: definition)
     }
     
@@ -62,7 +61,7 @@ struct DefinitionView: View{
                                         .padding(.top, reader.size.height * 0.55)
                                         .foregroundStyle(Color.init(red: 0.26, green: 0.26, blue: 0.26))
                                         .shadow(radius: 80)
-                                    Text(WordsTranslatorIntegrator.GetDefinitionsOf(word: definition.GetDefinition()).meanings.randomElement()?.definitions.randomElement()!.definition ?? "No text")
+                                    Text(WordsTranslatorIntegrator.GetDefinitionsOf(word: definition.GetDefinition()).meanings.randomElement()?.definitions.randomElement()!.definition ?? "No text").scaledToFill().foregroundStyle(Color.white)
                                 }
                             )
                     )
