@@ -43,4 +43,10 @@ struct WordPaletteView: View{
                minHeight: UIScreen.screenHeight * 0.25,
                maxHeight: UIScreen.screenHeight * 0.25)
     }
+    
+    
+    func GetRandomWord() -> String{
+        
+        return WordsPicker.GetRandomWord()
+    }
 }

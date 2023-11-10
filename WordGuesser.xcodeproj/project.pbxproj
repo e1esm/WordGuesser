@@ -22,6 +22,8 @@
 		BC1394EA2AFC1C3B00551FFC /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394E92AFC1C3B00551FFC /* ButtonStyle.swift */; };
 		BC1394ED2AFD620300551FFC /* UIDimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394EC2AFD620300551FFC /* UIDimension.swift */; };
 		BC1394EF2AFD791400551FFC /* ProgressBarVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */; };
+		BCC6D5692AFE0EC900DE1410 /* DefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6D5682AFE0EC900DE1410 /* DefinitionView.swift */; };
+		BCC6D56B2AFE2EE100DE1410 /* WordDefinitionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6D56A2AFE2EE100DE1410 /* WordDefinitionResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		BC1394E92AFC1C3B00551FFC /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		BC1394EC2AFD620300551FFC /* UIDimension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDimension.swift; sourceTree = "<group>"; };
 		BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarVIew.swift; sourceTree = "<group>"; };
+		BCC6D5682AFE0EC900DE1410 /* DefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionView.swift; sourceTree = "<group>"; };
+		BCC6D56A2AFE2EE100DE1410 /* WordDefinitionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				BC06930E2AFADF4800602D3E /* WordDefinerIntegration.swift */,
+				BCC6D56A2AFE2EE100DE1410 /* WordDefinitionResponse.swift */,
 			);
 			path = WordsDefiner;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			children = (
 				BC0693112AFAE19700602D3E /* WordPaletteView.swift */,
 				BC1394E92AFC1C3B00551FFC /* ButtonStyle.swift */,
+				BCC6D5682AFE0EC900DE1410 /* DefinitionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,12 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCC6D5692AFE0EC900DE1410 /* DefinitionView.swift in Sources */,
 				BC1394E82AFC057400551FFC /* WordsPickerViewModel.swift in Sources */,
 				BC1394EA2AFC1C3B00551FFC /* ButtonStyle.swift in Sources */,
 				BC0692DF2AFA30EF00602D3E /* ContentView.swift in Sources */,
 				BC1394EF2AFD791400551FFC /* ProgressBarVIew.swift in Sources */,
 				BC1394ED2AFD620300551FFC /* UIDimension.swift in Sources */,
 				BC06930F2AFADF4800602D3E /* WordDefinerIntegration.swift in Sources */,
+				BCC6D56B2AFE2EE100DE1410 /* WordDefinitionResponse.swift in Sources */,
 				BC06930B2AFA37DA00602D3E /* GeneratorIntegration.swift in Sources */,
 				BC0693122AFAE19700602D3E /* WordPaletteView.swift in Sources */,
 				BC0693082AFA334500602D3E /* ProgressBarStyle.swift in Sources */,

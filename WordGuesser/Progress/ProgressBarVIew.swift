@@ -35,7 +35,7 @@ struct ProgressBarVIew: View{
                                 withAnimation{progress += 1.0}
                             }
                         }
-                }.padding(.top, 25).frame(alignment: .center)
+                }.frame(alignment: .center)
                 
             }       .frame(minWidth: UIScreen.screenWidth * 0.65,
                            maxWidth: UIScreen.screenWidth * 0.8,

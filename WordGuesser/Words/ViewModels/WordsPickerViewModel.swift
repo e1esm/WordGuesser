@@ -15,22 +15,26 @@ class WordsPickerViewModel: ObservableObject{
     init(words: [WordResponse], generator: WordsAPIntegrator) {
         self.words = words
         wordsGenerator = generator
-        GetWords()
+        FetchWords()
     }
     
     init(){
         words = []
         wordsGenerator = WordsAPIntegrator()
-        GetWords()
+        FetchWords()
     }
 
     
     
-    func GetWords(){
+    func FetchWords(){
         
         words = wordsGenerator.FetchWord()
         
         objectWillChange.send()
+    }
+    
+    func GetRandomWord() -> String{
+        return words.randomElement()!.word
     }
     
     
