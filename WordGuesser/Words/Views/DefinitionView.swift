@@ -61,10 +61,10 @@ struct DefinitionView: View{
                                         .padding(.top, reader.size.height * 0.55)
                                         .foregroundStyle(Color.init(red: 0.26, green: 0.26, blue: 0.26))
                                         .shadow(radius: 80)
-                                    Text(definition.GetDefinition()).scaledToFill().foregroundStyle(Color.white)
+                                    Text(definition.GetDefinition()).scaledToFit().foregroundStyle(Color.white)
                                 }
                             )
-                    ).scaledToFill()
+                    )
                 
                     
                     .shadow(radius: 80)

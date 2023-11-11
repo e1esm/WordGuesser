@@ -25,6 +25,7 @@
 		BC52FB8F2AFF02ED003DFED7 /* HTTPRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC52FB8E2AFF02ED003DFED7 /* HTTPRequester.swift */; };
 		BCC6D5692AFE0EC900DE1410 /* DefinitionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6D5682AFE0EC900DE1410 /* DefinitionView.swift */; };
 		BCC6D56B2AFE2EE100DE1410 /* WordDefinitionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC6D56A2AFE2EE100DE1410 /* WordDefinitionResponse.swift */; };
+		BCE46BFA2B002EA100954CA6 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE46BF92B002EA100954CA6 /* ProgressViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		BC52FB8E2AFF02ED003DFED7 /* HTTPRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRequester.swift; sourceTree = "<group>"; };
 		BCC6D5682AFE0EC900DE1410 /* DefinitionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefinitionView.swift; sourceTree = "<group>"; };
 		BCC6D56A2AFE2EE100DE1410 /* WordDefinitionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDefinitionResponse.swift; sourceTree = "<group>"; };
+		BCE46BF92B002EA100954CA6 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,8 +158,8 @@
 		BC0693062AFA333400602D3E /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				BC0693072AFA334500602D3E /* ProgressBarStyle.swift */,
-				BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */,
+				BCE46BFC2B002EE700954CA6 /* ViewModels */,
+				BCE46BFB2B002EDF00954CA6 /* Views */,
 			);
 			path = Progress;
 			sourceTree = "<group>";
@@ -222,6 +224,23 @@
 				BC52FB8E2AFF02ED003DFED7 /* HTTPRequester.swift */,
 			);
 			path = HTTPRequestService;
+			sourceTree = "<group>";
+		};
+		BCE46BFB2B002EDF00954CA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BC0693072AFA334500602D3E /* ProgressBarStyle.swift */,
+				BC1394EE2AFD791400551FFC /* ProgressBarVIew.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BCE46BFC2B002EE700954CA6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BCE46BF92B002EA100954CA6 /* ProgressViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +380,7 @@
 				BC0692DF2AFA30EF00602D3E /* ContentView.swift in Sources */,
 				BC1394EF2AFD791400551FFC /* ProgressBarVIew.swift in Sources */,
 				BC1394ED2AFD620300551FFC /* UIDimension.swift in Sources */,
+				BCE46BFA2B002EA100954CA6 /* ProgressViewModel.swift in Sources */,
 				BC06930F2AFADF4800602D3E /* WordDefinerIntegration.swift in Sources */,
 				BCC6D56B2AFE2EE100DE1410 /* WordDefinitionResponse.swift in Sources */,
 				BC06930B2AFA37DA00602D3E /* GeneratorIntegration.swift in Sources */,

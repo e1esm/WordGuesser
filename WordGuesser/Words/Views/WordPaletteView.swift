@@ -12,15 +12,17 @@ private let columnAmount = 2
 
 struct WordPaletteView: View{
     @ObservedObject private var WordsPicker: WordsPickerViewModel
+    @ObservedObject private var progressViewModel: ProgressViewModel
     
     private var columns: [GridItem]
     
-    init() {
+    init(progressViewModel: ProgressViewModel) {
         WordsPicker = WordsPickerViewModel()
         columns = []
         for _ in 0..<2{
             columns.append(GridItem(.flexible()))
         }
+        self.progressViewModel = progressViewModel
     }
     
     var body: some View{
@@ -31,9 +33,14 @@ struct WordPaletteView: View{
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(0..<WordsPicker.words.count, id: \.self) { index in
                     let item = WordsPicker.words[index]
-                    Button(item.word){
-                    
-                    }.buttonStyle(WordPickerButton())
+                    Button(item.word, action:{
+                        let wordToBeChosen = UserDefaults.standard.string(forKey: "curr_word") ?? ""
+                        if(item.word == wordToBeChosen){
+                            progressViewModel.UpdateProgress(1)
+                        }
+                    }).buttonStyle(WordPickerButton())
+                        .onTapGesture {
+                        }
                 }
             }.scaledToFill()
             
@@ -48,5 +55,9 @@ struct WordPaletteView: View{
     func GetPaletteWords() -> [String]{
         
         return WordsPicker.GetWords()
+    }
+    
+    func GetProgressViewModel() -> ProgressViewModel{
+        return progressViewModel
     }
 }

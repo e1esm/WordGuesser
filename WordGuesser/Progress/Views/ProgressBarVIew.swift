@@ -9,7 +9,13 @@ import Foundation
 import SwiftUI
 
 struct ProgressBarVIew: View{
-    @State private var progress = 0.0
+    
+    @ObservedObject var progressViewModel: ProgressViewModel
+    
+    init(progressViewModel: ProgressViewModel){
+        self.progressViewModel = progressViewModel
+    }
+    
     private var total = 100.0
     var body: some View {
         VStack(alignment: .center, spacing: 25){
@@ -24,15 +30,15 @@ struct ProgressBarVIew: View{
                         .progressViewStyle(GaugeProgressStyle(color: Color.gray.opacity(0.15), width: 20))
                         .contentShape(Rectangle())
                         .frame(width: reader.size.width * 0.45)
-                    Text(String(Int(progress)) + " / " + String(Int(total)))
+                    Text(String(progressViewModel.GetProgress()) + " / " + String(Int(total)))
                         .foregroundStyle(.white)
-                    ProgressView(value: progress, total: total)
+                    ProgressView(value: Double(progressViewModel.GetProgress()), total: total)
                         .progressViewStyle(GaugeProgressStyle(color: Color.blue.opacity(0.5), width: 20))
                         .frame(width: reader.size.width * 0.45)
                         .contentShape(Rectangle())
                         .onTapGesture {
-                            if progress < 100{
-                                withAnimation{progress += 1.0}
+                            if progressViewModel.GetProgress() < 100{
+                                withAnimation{progressViewModel.UpdateProgress(1)}
                             }
                         }
                 }.frame(alignment: .center)

@@ -13,7 +13,7 @@ struct WordsTranslatorIntegrator{
     private static let baseURLPath: String = "https://api.dictionaryapi.dev/api/v2/entries/en/"
     
     
-    static func GetDefinitionsOf(words: [String]) -> WordEntry{
+    static func GetDefinitionsOf(words: [String]) -> (WordEntry, Bool){
         var definitions: [String: WordEntry] = [:]
         for i in 0..<words.count{
             let definition = HTTPRequester<WordEntry?>.SendRequest(request: URLRequest(url: URL(string: baseURLPath + words[i])!), method: "GET")
@@ -24,11 +24,16 @@ struct WordsTranslatorIntegrator{
         }
   
         var chosenWord = ""
-        
+        var i = 0
         while(chosenWord == ""){
-            chosenWord = (definitions.keys.randomElement())!
+            chosenWord = (definitions.keys.randomElement()) ?? ""
+            i += 1
+            if (i == words.count && chosenWord == ""){
+                return (WordEntry(), false)
+            }
         }
-        
-        return definitions[chosenWord]!
+        print(definitions[chosenWord]!.word)
+        UserDefaults.standard.setValue(definitions[chosenWord]!.word, forKey: "curr_word")
+        return (definitions[chosenWord]!, true)
     }
 }

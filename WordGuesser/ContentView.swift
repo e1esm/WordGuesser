@@ -13,8 +13,9 @@ struct ContentView: View {
     @State private var definitionView: DefinitionView
     
     init(){
-        wordPaletteView = WordPaletteView()
-        progressBarView  = ProgressBarVIew()
+        var progressViewModel = ProgressViewModel()
+        wordPaletteView = WordPaletteView(progressViewModel: progressViewModel)
+        progressBarView  = ProgressBarVIew(progressViewModel: progressViewModel)
         definitionView = DefinitionView()
     }
     var body: some View {
@@ -24,18 +25,25 @@ struct ContentView: View {
                 progressBarView
                 wordPaletteView
                 definitionView
-        }.frame(width: UIScreen.screenWidth * 0.95,
+            }.frame(width: UIScreen.screenWidth * 0.95,
                     height: UIScreen.screenHeight * 0.9).background(Color.white).ignoresSafeArea(.all, edges: .bottom)
-            .background(Color.white)
-            .clipShape(RoundedRectangle(cornerRadius: 46))
-            .shadow(color: Color.black, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-
+                .background(Color.white)
+                .clipShape(RoundedRectangle(cornerRadius: 46))
+                .shadow(color: Color.black, radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+            
             
         }.onAppear(perform: {
-            definitionView = DefinitionView(definition:
-                                                WordsTranslatorIntegrator.GetDefinitionsOf(words: wordPaletteView.GetPaletteWords()).meanings[0].definitions[0].definition)
+            
+            var matchedWord: WordEntry = WordEntry()
+            var wasFound: Bool = false
+            while !wasFound{
+                (matchedWord, wasFound) = WordsTranslatorIntegrator.GetDefinitionsOf(words: wordPaletteView.GetPaletteWords())
+                if (!wasFound){
+                    wordPaletteView = WordPaletteView(progressViewModel: wordPaletteView.GetProgressViewModel())
+                }
+            }
+            definitionView = DefinitionView(definition: matchedWord.meanings[0].definitions[0].definition)
         })
-
     }
 }
 
