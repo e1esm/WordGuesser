@@ -36,15 +36,10 @@ struct ProgressBarVIew: View{
                         .progressViewStyle(GaugeProgressStyle(color: Color.blue.opacity(0.5), width: 20))
                         .frame(width: reader.size.width * 0.45)
                         .contentShape(Rectangle())
-                        .onTapGesture {
-                            if progressViewModel.GetProgress() < 100{
-                                withAnimation{progressViewModel.UpdateProgress(1)}
-                            }
-                        }
                 }.frame(alignment: .center)
                 
-            }       .frame(minWidth: UIScreen.screenWidth * 0.65,
-                           maxWidth: UIScreen.screenWidth * 0.8,
+            }       .frame(minWidth: UIScreen.screenWidth * 0.8,
+                           maxWidth: UIScreen.screenWidth * 0.85,
                            minHeight: UIScreen.screenHeight * 0.25,
                            maxHeight: UIScreen.screenHeight * 0.25)
         }

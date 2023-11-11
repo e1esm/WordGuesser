@@ -30,6 +30,10 @@ struct WordPaletteView: View{
             RoundedRectangle(cornerRadius: 25, style: .circular)
                 .foregroundStyle(Color.init(red: 0.26, green: 0.26, blue: 0.26))
                 .shadow(radius: 80)
+                .frame(minWidth: UIScreen.screenWidth * 0.8,
+                       maxWidth: UIScreen.screenWidth * 0.85,
+                       minHeight: UIScreen.screenHeight * 0.25,
+                       maxHeight: UIScreen.screenHeight * 0.25)
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(0..<WordsPicker.words.count, id: \.self) { index in
                     let item = WordsPicker.words[index]
@@ -37,16 +41,16 @@ struct WordPaletteView: View{
                         let wordToBeChosen = UserDefaults.standard.string(forKey: "curr_word") ?? ""
                         if(item.word == wordToBeChosen){
                             progressViewModel.UpdateProgress(1)
+                            WordsPicker.FetchWords()
                         }
                     }).buttonStyle(WordPickerButton())
-                        .onTapGesture {
-                        }
+                        .padding([.leading, .trailing], 5)
                 }
             }.scaledToFill()
             
         }
-        .frame(minWidth: UIScreen.screenWidth * 0.65,
-               maxWidth: UIScreen.screenWidth * 0.8,
+        .frame(minWidth: UIScreen.screenWidth * 0.8,
+               maxWidth: UIScreen.screenWidth * 0.85,
                minHeight: UIScreen.screenHeight * 0.25,
                maxHeight: UIScreen.screenHeight * 0.25)
     }
