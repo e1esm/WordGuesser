@@ -19,7 +19,7 @@ struct ContentView: View {
     }
     var body: some View {
         ZStack {
-            Color.blue.ignoresSafeArea()
+            Color.init(red: 0.26, green: 0.26, blue: 0.26).ignoresSafeArea()
             VStack(spacing: UIScreen.screenHeight * 0.1){
                 progressBarView
                 wordPaletteView
@@ -33,9 +33,7 @@ struct ContentView: View {
             
         }.onAppear(perform: {
             definitionView = DefinitionView(definition:
-                                                wordPaletteView.GetRandomWord())
-            /*definitionView.SetDefinition(new: wordPaletteView.GetRandomWord())
-             */
+                                                WordsTranslatorIntegrator.GetDefinitionsOf(words: wordPaletteView.GetPaletteWords()).meanings[0].definitions[0].definition)
         })
 
     }

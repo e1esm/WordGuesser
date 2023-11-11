@@ -13,44 +13,22 @@ struct WordsTranslatorIntegrator{
     private static let baseURLPath: String = "https://api.dictionaryapi.dev/api/v2/entries/en/"
     
     
-    static func GetDefinitionsOf(word: String) -> WordEntry{
-        var definitionResponse: [WordEntry]?
-        
-        var requestURL: URLRequest = URLRequest(url: URL(string: baseURLPath + word)!)
-        requestURL.httpMethod = "GET"
-        print("Request: \(requestURL.url?.absoluteString)")
-        let semaphore = DispatchSemaphore(value: 0)
-        
-        let task = URLSession.shared.dataTask(with: requestURL) { (data, response, error) in
+    static func GetDefinitionsOf(words: [String]) -> WordEntry{
+        var definitions: [String: WordEntry] = [:]
+        for i in 0..<words.count{
+            let definition = HTTPRequester<WordEntry?>.SendRequest(request: URLRequest(url: URL(string: baseURLPath + words[i])!), method: "GET")
             
-           
-            
-            defer{
-                semaphore.signal()
+            if (definition.count != 0){
+                definitions[words[i]] = definition[0]
             }
-            
-            
-            if let response = response as? HTTPURLResponse{
-                print(response.statusCode)
-            }
-            if let data = data{
-                do{
-                    print(String(data: data, encoding: .utf8))
-                    definitionResponse = try JSONDecoder().decode([WordEntry].self, from: data)
-                }catch{
-                    print(error)
-                }
-            }
+        }
   
-        }
-        task.resume()
-        _ = semaphore.wait(timeout: .distantFuture)
+        var chosenWord = ""
         
-        if definitionResponse == nil{
-            return WordEntry()
+        while(chosenWord == ""){
+            chosenWord = (definitions.keys.randomElement())!
         }
-        return definitionResponse![0]
+        
+        return definitions[chosenWord]!
     }
-    
-    
 }

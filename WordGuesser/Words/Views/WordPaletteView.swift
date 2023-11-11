@@ -45,8 +45,8 @@ struct WordPaletteView: View{
     }
     
     
-    func GetRandomWord() -> String{
+    func GetPaletteWords() -> [String]{
         
-        return WordsPicker.GetRandomWord()
+        return WordsPicker.GetWords()
     }
 }

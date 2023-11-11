@@ -53,7 +53,7 @@ struct DefinitionView: View{
                     .overlay(
                         RoundedRectangle(cornerRadius: 26)
                             .foregroundStyle(Color.blue.opacity(0.5))
-                            .frame(width: reader.size.width * 0.8,
+                            .frame(width: reader.size.width * 0.95,
                                    height: reader.size.height * 0.7, alignment: .trailing)
                             .overlay(
                                 ZStack{
@@ -61,10 +61,10 @@ struct DefinitionView: View{
                                         .padding(.top, reader.size.height * 0.55)
                                         .foregroundStyle(Color.init(red: 0.26, green: 0.26, blue: 0.26))
                                         .shadow(radius: 80)
-                                    Text(WordsTranslatorIntegrator.GetDefinitionsOf(word: definition.GetDefinition()).meanings.randomElement()?.definitions.randomElement()!.definition ?? "No text").scaledToFill().foregroundStyle(Color.white)
+                                    Text(definition.GetDefinition()).scaledToFill().foregroundStyle(Color.white)
                                 }
                             )
-                    )
+                    ).scaledToFill()
                 
                     
                     .shadow(radius: 80)

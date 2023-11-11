@@ -33,8 +33,12 @@ class WordsPickerViewModel: ObservableObject{
         objectWillChange.send()
     }
     
-    func GetRandomWord() -> String{
-        return words.randomElement()!.word
+    func GetWords() -> [String]{
+        var w: [String] = []
+        for i in 0..<words.count{
+            w.append(words[i].word)
+        }
+        return w
     }
     
     
